@@ -1,0 +1,35 @@
+
+milkytracker: $(OUT_DIR)/SDL_KeyTranslation.cpp.o $(OUT_DIR)/SDL_Main.cpp.o
+	@echo -n 'Linking milkytracker... '
+	@$(CC) $(CFLAGS) -o milkytracker $(OUT_DIR)/SDL_KeyTranslation.cpp.o $(OUT_DIR)/SDL_Main.cpp.o $(LIBS)
+	@echo Done.
+
+$(OUT_DIR)/SDL_KeyTranslation.cpp.o: SDL_KeyTranslation.cpp \
+ SDL_KeyTranslation.h BasicTypes.h
+	@echo -n 'Compiling SDL_KeyTranslation.cpp... '
+	@$(CC) $(CFLAGS) -o $(OUT_DIR)/SDL_KeyTranslation.cpp.o -c SDL_KeyTranslation.cpp
+	@echo Done.
+
+$(OUT_DIR)/SDL_Main.cpp.o: SDL_Main.cpp SDL_KeyTranslation.h BasicTypes.h \
+ PPUI.h DisplayDevice_SDL.h DisplayDeviceFB_SDL.h Screen.h Tracker.h \
+ PPMutex.h PPSystem_POSIX.h PPPath_POSIX.h
+	@echo -n 'Compiling SDL_Main.cpp... '
+	@$(CC) $(CFLAGS) -o $(OUT_DIR)/SDL_Main.cpp.o -c SDL_Main.cpp
+	@echo Done.
+
+run:
+	./milkytracker 
+
+debug:
+	gdb ./milkytracker
+
+clean:
+	@echo -n 'Removing all temporary binaries... '
+	@rm -f milkytracker $(OUT_DIR)/*.o
+	@echo Done.
+
+clear:
+	@echo -n 'Removing all temporary binaries... '
+	@rm -f milkytracker $(OUT_DIR)/*.o
+	@echo Done.
+
