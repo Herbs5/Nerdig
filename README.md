@@ -1,0 +1,2 @@
+# Nerdig
+Guitar Sequencer Experiment
