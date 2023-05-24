@@ -4,8 +4,8 @@ Guitar Sequencer Experiment
 This is a Fork of an old Milkytracker Version-0.90.85 in low 
 Resolution. 
 One Tab is added for visualizing a Guitar-Nek.
-For playing and editing 6 Strings in 6 Sequencer Chanels by selecting the first Chanel
-where the String Chanels begin. (Cha +-)
+For playing and editing 6 Strings in 6 Sequencer Channels by selecting the first Channel
+where the String Channels begin. (Cha +-)
 It is also possible to open smal Midi Files with less then 5 Instruments. 
 not complete yet.
 Midifiles from Rosegarden-Studio work best. 
